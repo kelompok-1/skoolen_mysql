@@ -1,32 +1,31 @@
 import 'package:flutter/material.dart';
-import 'package:skooleneducation/book/book_detail.dart';
-import 'package:skooleneducation/book/book_model.dart';
+import 'package:skooleneducation/video/video_detail.dart';
+import 'package:skooleneducation/video/video_model.dart';
+import 'package:skooleneducation/video/video_service.dart';
 
-import 'book_service.dart';
-
-class BookView extends StatefulWidget {
-  const BookView({super.key});
+class VideoView extends StatefulWidget {
+  const VideoView({super.key});
 
   @override
-  State<BookView> createState() => _BookViewState();
+  State<VideoView> createState() => _VideoViewState();
 }
 
-class _BookViewState extends State<BookView> {
-  late List<BookModel> bookList;
+class _VideoViewState extends State<VideoView> {
+  late List<VideoModel> videoList;
   bool loading = true;
 
-  getAllBook() async {
-    bookList = await BookService().getBook();
+  getAllVideo() async {
+    videoList = await VideoService().getVideo();
     setState(() {
       loading = false;
     });
-    print("book list : ${bookList.length}");
+    print("book list : ${videoList.length}");
   }
 
   @override
   void initState() {
     super.initState();
-    getAllBook();
+    getAllVideo();
   }
 
   @override
@@ -34,7 +33,7 @@ class _BookViewState extends State<BookView> {
     return Scaffold(
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
-        title: Text("Daftar Buku"),
+        title: Text("Daftar Video"),
         backgroundColor: Colors.deepPurple,
         actions: <Widget>[],
       ),
@@ -43,9 +42,9 @@ class _BookViewState extends State<BookView> {
               child: CircularProgressIndicator(),
             )
           : ListView.builder(
-              itemCount: bookList.length,
+              itemCount: videoList.length,
               itemBuilder: (context, index) {
-                BookModel book = bookList[index];
+                VideoModel video = videoList[index];
                 return Card(
                   elevation: 4,
                   child: ListTile(
@@ -53,26 +52,23 @@ class _BookViewState extends State<BookView> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => BookDetail(
-                            bookModel: book,
+                          builder: (context) => VideoDetail(
+                            videoModel: video,
                             index: index,
                           ),
                         ),
-                      ).then((value) => getAllBook());
+                      ).then((value) => getAllVideo());
                     },
                     // leading: CircleAvatar(child: Text(book.nm_barang[0])),
                     title: Text(
-                      book.nama_buku,
+                      video.nama_video,
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.deepPurple),
                     ),
-                    subtitle: Text(book.nama_penulis +
-                        " | " +
-                        book.jumlah_halaman +
-                        " hal."),
-                    leading: Image.network(
-                      book.gambar,
+                    subtitle: Text(video.durasi),
+                    leading: Image.asset(
+                      "assets/images/play_button.png",
                       width: 50,
                       height: 200,
                       fit: BoxFit.contain,
@@ -83,12 +79,12 @@ class _BookViewState extends State<BookView> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => BookDetail(
-                              bookModel: book,
+                            builder: (context) => VideoDetail(
+                              videoModel: video,
                               index: index,
                             ),
                           ),
-                        ).then((value) => getAllBook());
+                        ).then((value) => getAllVideo());
                       },
                     ),
                   ),

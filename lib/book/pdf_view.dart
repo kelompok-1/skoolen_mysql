@@ -6,7 +6,9 @@ import 'package:http/http.dart' as http;
 import 'dart:io';
 
 import 'package:path/path.dart';
+import 'package:skooleneducation/book/book_view.dart';
 import 'package:skooleneducation/book/pdf_home.dart';
+import 'package:skooleneducation/pages/home_page.dart';
 
 class PDFViewer extends StatefulWidget {
   final File file;
@@ -31,24 +33,12 @@ class _PDFViewerState extends State<PDFViewer> {
 
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.deepPurple,
         title: Text(name),
-        leading: IconButton(
-          splashRadius: 19,
-          icon: Icon(
-            Icons.arrow_back_ios,
-            color: Colors.white,
-          ),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => PDFHome()),
-            );
-          },
-        ),
         actions: pages >= 2
             ? [
                 Center(
-                  child: Text(text),
+                  child: Text(text.trim()),
                 ),
                 IconButton(
                   onPressed: () {
