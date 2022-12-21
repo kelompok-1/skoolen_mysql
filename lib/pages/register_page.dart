@@ -59,7 +59,7 @@ class _RegisterPageState extends State<RegisterPage> {
           gravity: ToastGravity.CENTER,
           backgroundColor: Colors.grey[500],
         );
-        Navigator.push(
+        Navigator.pushReplacement(
           context,
           MaterialPageRoute(
             builder: (context) => LoginPage(),
@@ -114,14 +114,14 @@ class _RegisterPageState extends State<RegisterPage> {
         ),
         elevation: 1,
         backgroundColor: Colors.grey[200],
-        leading: IconButton(
-          splashRadius: 19,
-          icon: Icon(
-            Icons.arrow_back_ios,
-            color: Colors.black,
-          ),
-          onPressed: () {},
-        ),
+        // leading: IconButton(
+        //   splashRadius: 19,
+        //   icon: Icon(
+        //     Icons.arrow_back_ios,
+        //     color: Colors.black,
+        //   ),
+        //   onPressed: () {},
+        // ),
       ),
 
       body: SafeArea(
@@ -216,14 +216,14 @@ class _RegisterPageState extends State<RegisterPage> {
                   decoration: InputDecoration(
                     prefixIcon: const Icon(
                       Icons.person_2,
-                      color: Color(0xff00B1D2),
+                      color: Colors.deepPurple,
                     ),
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.grey),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Color(0xff00B1D2)),
+                      borderSide: BorderSide(color: Colors.deepPurple),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     hintText: 'Maksimal 15 karakter',
@@ -270,14 +270,14 @@ class _RegisterPageState extends State<RegisterPage> {
                   decoration: InputDecoration(
                     prefixIcon: const Icon(
                       Icons.person_2,
-                      color: Color(0xff00B1D2),
+                      color: Colors.deepPurple,
                     ),
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.grey),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Color(0xff00B1D2)),
+                      borderSide: BorderSide(color: Colors.deepPurple),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     hintText: 'Ketik di sini',
@@ -322,7 +322,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   decoration: InputDecoration(
                     prefixIcon: const Icon(
                       Icons.lock,
-                      color: Color(0xff00B1D2),
+                      color: Colors.deepPurple,
                     ),
                     suffixIcon: GestureDetector(
                       onTap: () {
@@ -345,7 +345,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       borderRadius: BorderRadius.circular(12),
                     ),
                     focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Color(0xff00B1D2)),
+                      borderSide: BorderSide(color: Colors.deepPurple),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     hintText: 'Minimal 6 karakter',
@@ -389,7 +389,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   decoration: InputDecoration(
                     prefixIcon: const Icon(
                       Icons.lock,
-                      color: Color(0xff00B1D2),
+                      color: Colors.deepPurple,
                     ),
                     suffixIcon: GestureDetector(
                       onTap: () {
@@ -412,7 +412,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       borderRadius: BorderRadius.circular(12),
                     ),
                     focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Color(0xff00B1D2)),
+                      borderSide: BorderSide(color: Colors.deepPurple),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     hintText: 'Masukkin sandi yang sama',
@@ -451,7 +451,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       : null,
                   style: ElevatedButton.styleFrom(
                     elevation: 0,
-                    backgroundColor: const Color(0xff00b1d2),
+                    backgroundColor: Colors.deepPurple,
                     foregroundColor: Colors.white,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(50),
@@ -499,7 +499,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       borderRadius: BorderRadius.circular(12),
                       // highlightColor: Colors.amber,
                       highlightColor: Color(0x1000B1D2),
-                      splashColor: Color(0x4000B1D2),
+                      splashColor: Color.fromARGB(255, 238, 184, 248),
                       child: Container(
                         padding: EdgeInsets.symmetric(horizontal: 3),
                         child: Text(
@@ -507,7 +507,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           'Masuk',
                           style: GoogleFonts.poppins(
                             fontSize: 13,
-                            color: Color(0xff00b1d2),
+                            color: Colors.deepPurple,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -544,7 +544,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       borderRadius: BorderRadius.circular(12),
                       // highlightColor: Colors.amber,
                       highlightColor: Color(0x1000B1D2),
-                      splashColor: Color(0x4000B1D2),
+                      splashColor: Color.fromARGB(255, 238, 184, 248),
                       child: Container(
                         padding: EdgeInsets.symmetric(horizontal: 3),
                         child: Text(
@@ -552,13 +552,13 @@ class _RegisterPageState extends State<RegisterPage> {
                           'Syarat Ketentuan & Kebijakan Privasi',
                           style: GoogleFonts.poppins(
                             fontSize: 13,
-                            color: Color(0xff00b1d2),
+                            color: Colors.deepPurple,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
                       ),
                       onTap: () {
-                        Navigator.push(
+                        Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
                             builder: (context) => ConditionPolicy(),

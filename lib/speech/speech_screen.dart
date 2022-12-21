@@ -1,7 +1,5 @@
 import 'package:avatar_glow/avatar_glow.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:highlight_text/highlight_text.dart';
 import 'package:speech_to_text/speech_to_text.dart' as stt;
 
@@ -53,7 +51,7 @@ class _SpeechScreenState extends State<SpeechScreen> {
 
   late stt.SpeechToText _speech;
   bool _islistening = false;
-  String _text = 'Press the button and start speaking';
+  String _text = 'Tekan tombol untuk memulai';
   double _confidence = 1.0;
 
   @override
@@ -65,21 +63,27 @@ class _SpeechScreenState extends State<SpeechScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[200],
       appBar: AppBar(
-        title:
-            Text('Confidence : ${(_confidence * 100.0).toStringAsFixed(1)}%'),
+        backgroundColor: Colors.deepPurple,
+        title: Text('Speaking'),
+        // Text('Confidence : ${(_confidence * 100.0).toStringAsFixed(1)}%'),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: AvatarGlow(
         animate: _islistening,
-        glowColor: Theme.of(context).primaryColor,
+        glowColor: Colors.deepPurple,
         endRadius: 75.0,
         duration: const Duration(milliseconds: 2000),
         repeatPauseDuration: const Duration(milliseconds: 100),
         repeat: true,
         child: FloatingActionButton(
+          backgroundColor: Colors.deepPurple,
           onPressed: _listen,
-          child: Icon(_islistening ? Icons.mic : Icons.mic_none),
+          child: Icon(
+            _islistening ? Icons.mic : Icons.mic_none,
+            color: Colors.white,
+          ),
         ),
       ),
       body: SingleChildScrollView(

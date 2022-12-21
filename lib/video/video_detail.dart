@@ -29,7 +29,7 @@ class _VideoDetailState extends State<VideoDetail> {
 
     chewieController = ChewieController(
         videoPlayerController: controller,
-        autoPlay: false,
+        autoPlay: true,
         looping: false,
         materialProgressColors: ChewieProgressColors(
           playedColor: Colors.red,

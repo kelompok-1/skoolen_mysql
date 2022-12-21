@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:skooleneducation/audio/audio_list.dart';
+import 'package:skooleneducation/audio/audio_view.dart';
 import 'package:skooleneducation/book/book_view.dart';
 import 'package:skooleneducation/pages/condition_policy_page.dart';
 import 'package:skooleneducation/pages/login_page.dart';
+import 'package:skooleneducation/pages/logout.dart';
 import 'package:skooleneducation/pages/register_page.dart';
+import 'package:skooleneducation/speech/speech_screen.dart';
 import 'package:skooleneducation/video/video_view.dart';
 
 class HomePage extends StatefulWidget {
@@ -26,8 +30,9 @@ class _HomePageState extends State<HomePage> {
   final List<Widget> _pages = [
     VideoView(),
     BookView(),
-    RegisterPage(),
-    ConditionPolicy(),
+    AudioList(),
+    SpeechScreen(),
+    Logout(),
   ];
 
   @override
@@ -48,6 +53,7 @@ class _HomePageState extends State<HomePage> {
               icon: Icon(Icons.play_circle_fill_sharp), label: "Video"),
           BottomNavigationBarItem(icon: Icon(Icons.book), label: "Buku"),
           BottomNavigationBarItem(icon: Icon(Icons.music_note), label: "Audio"),
+          BottomNavigationBarItem(icon: Icon(Icons.mic), label: "Speaking"),
           BottomNavigationBarItem(icon: Icon(Icons.logout), label: "Keluar"),
         ],
       ),

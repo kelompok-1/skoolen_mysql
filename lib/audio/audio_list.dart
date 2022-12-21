@@ -1,31 +1,33 @@
 import 'package:flutter/material.dart';
-import 'package:skooleneducation/video/video_detail.dart';
-import 'package:skooleneducation/video/video_model.dart';
-import 'package:skooleneducation/video/video_service.dart';
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:skooleneducation/audio/audio_model.dart';
+import 'package:skooleneducation/audio/audio_play.dart';
+import 'package:skooleneducation/audio/audio_service.dart';
 
-class VideoView extends StatefulWidget {
-  const VideoView({super.key});
+class AudioList extends StatefulWidget {
+  const AudioList({super.key});
 
   @override
-  State<VideoView> createState() => _VideoViewState();
+  State<AudioList> createState() => _AudioListState();
 }
 
-class _VideoViewState extends State<VideoView> {
-  late List<VideoModel> videoList;
+class _AudioListState extends State<AudioList> {
+  late List<AudioModel> audioList;
   bool loading = true;
 
-  getAllVideo() async {
-    videoList = await VideoService().getVideo();
+  getAllAudio() async {
+    audioList = await AudioService().getAudio();
     setState(() {
       loading = false;
     });
-    print("book list : ${videoList.length}");
+    print("book list : ${audioList.length}");
   }
 
   @override
   void initState() {
     super.initState();
-    getAllVideo();
+    getAllAudio();
   }
 
   @override
@@ -33,7 +35,7 @@ class _VideoViewState extends State<VideoView> {
     return Scaffold(
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
-        title: Text("Daftar Video"),
+        title: Text("Daftar Audio"),
         backgroundColor: Colors.deepPurple,
         actions: <Widget>[],
       ),
@@ -42,9 +44,9 @@ class _VideoViewState extends State<VideoView> {
               child: CircularProgressIndicator(),
             )
           : ListView.builder(
-              itemCount: videoList.length,
+              itemCount: audioList.length,
               itemBuilder: (context, index) {
-                VideoModel video = videoList[index];
+                AudioModel audio = audioList[index];
                 return Card(
                   elevation: 4,
                   child: ListTile(
@@ -52,23 +54,23 @@ class _VideoViewState extends State<VideoView> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => VideoDetail(
-                            videoModel: video,
+                          builder: (context) => AudioPlay(
+                            audioModel: audio,
                             index: index,
                           ),
                         ),
-                      ).then((value) => getAllVideo());
+                      ).then((value) => getAllAudio());
                     },
                     // leading: CircleAvatar(child: Text(book.nm_barang[0])),
                     title: Text(
-                      video.urutan + ". " + video.nama_video,
+                      audio.nama_audio,
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.deepPurple),
                     ),
-                    subtitle: Text(video.durasi),
-                    leading: Image.asset(
-                      "assets/images/play_button.png",
+                    subtitle: Text(audio.nama_author),
+                    leading: Image.network(
+                      audio.gambar,
                       width: 50,
                       height: 200,
                       fit: BoxFit.contain,
@@ -79,12 +81,12 @@ class _VideoViewState extends State<VideoView> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => VideoDetail(
-                              videoModel: video,
+                            builder: (context) => AudioPlay(
+                              audioModel: audio,
                               index: index,
                             ),
                           ),
-                        ).then((value) => getAllVideo());
+                        ).then((value) => getAllAudio());
                       },
                     ),
                   ),

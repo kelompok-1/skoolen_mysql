@@ -1,9 +1,10 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:skooleneducation/book/book_view.dart';
+import 'package:skooleneducation/audio/audio_list.dart';
 import 'package:skooleneducation/pages/home_page.dart';
-import 'package:skooleneducation/video/video_view.dart';
+import 'package:skooleneducation/pages/login_page.dart';
+import 'package:skooleneducation/speech/speech_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Skoolen',
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: LoginPage(),
     );
   }
 }

@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
+import 'package:skooleneducation/pages/home_page.dart';
 import 'package:skooleneducation/pages/register_page.dart';
 
 import 'condition_policy_page.dart';
@@ -47,10 +48,11 @@ class _LoginPageState extends State<LoginPage> {
           gravity: ToastGravity.CENTER,
           backgroundColor: Colors.grey[500],
         );
-        Navigator.push(
+
+        Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => ConditionPolicy(),
+            builder: (context) => HomePage(),
           ),
         );
       } else {
@@ -93,21 +95,21 @@ class _LoginPageState extends State<LoginPage> {
         ),
         elevation: 1,
         backgroundColor: Colors.grey[200],
-        leading: IconButton(
-          splashRadius: 19,
-          icon: Icon(
-            Icons.arrow_back_ios,
-            color: Colors.black,
-          ),
-          onPressed: () {
-            // Navigator.push(
-            //   context,
-            //   MaterialPageRoute(
-            //     builder: (context) => onboardingPage(),
-            //   ),
-            // );
-          },
-        ),
+        // leading: IconButton(
+        //   splashRadius: 19,
+        //   icon: Icon(
+        //     Icons.arrow_back_ios,
+        //     color: Colors.black,
+        //   ),
+        //   onPressed: () {
+        //     // Navigator.push(
+        //     //   context,
+        //     //   MaterialPageRoute(
+        //     //     builder: (context) => onboardingPage(),
+        //     //   ),
+        //     // );
+        //   },
+        // ),
       ),
 
       body: SafeArea(
@@ -203,14 +205,14 @@ class _LoginPageState extends State<LoginPage> {
                   decoration: InputDecoration(
                     prefixIcon: const Icon(
                       Icons.person_2,
-                      color: Color(0xff00B1D2),
+                      color: Colors.deepPurple,
                     ),
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.grey),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Color(0xff00B1D2)),
+                      borderSide: BorderSide(color: Colors.deepPurple),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     hintText: 'Maksimal 15 Karakter',
@@ -258,7 +260,7 @@ class _LoginPageState extends State<LoginPage> {
                   decoration: InputDecoration(
                     prefixIcon: const Icon(
                       Icons.lock,
-                      color: Color(0xff00B1D2),
+                      color: Colors.deepPurple,
                     ),
                     suffixIcon: GestureDetector(
                       onTap: () {
@@ -281,7 +283,7 @@ class _LoginPageState extends State<LoginPage> {
                       borderRadius: BorderRadius.circular(12),
                     ),
                     focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Color(0xff00B1D2)),
+                      borderSide: BorderSide(color: Colors.deepPurple),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     hintText: 'Minimal 6 karakter',
@@ -311,7 +313,7 @@ class _LoginPageState extends State<LoginPage> {
                         "Lupa kata sandi?",
                         style: GoogleFonts.poppins(
                           fontSize: 14,
-                          color: Color(0xff00B1D2),
+                          color: Colors.deepPurple,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -328,7 +330,7 @@ class _LoginPageState extends State<LoginPage> {
                       style: TextButton.styleFrom(
                         disabledBackgroundColor: Colors.amber,
                         backgroundColor: Colors.grey[200],
-                        foregroundColor: const Color(0xff00b1d2),
+                        foregroundColor: Colors.purple,
                         side: BorderSide(width: 0, color: Colors.transparent),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(40),
@@ -359,7 +361,7 @@ class _LoginPageState extends State<LoginPage> {
                       : null,
                   style: ElevatedButton.styleFrom(
                     elevation: 0,
-                    backgroundColor: const Color(0xff00b1d2),
+                    backgroundColor: Colors.deepPurple,
                     foregroundColor: Colors.white,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(50),
@@ -407,7 +409,7 @@ class _LoginPageState extends State<LoginPage> {
                       borderRadius: BorderRadius.circular(12),
                       // highlightColor: Colors.amber,
                       highlightColor: Color(0x1000B1D2),
-                      splashColor: Color(0x4000B1D2),
+                      splashColor: Color.fromARGB(255, 238, 184, 248),
                       child: Container(
                         padding: EdgeInsets.symmetric(horizontal: 3),
                         child: Text(
@@ -415,13 +417,13 @@ class _LoginPageState extends State<LoginPage> {
                           'Daftar Sekarang',
                           style: GoogleFonts.poppins(
                             fontSize: 13,
-                            color: Color(0xff00b1d2),
+                            color: Colors.deepPurple,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
                       ),
                       onTap: () {
-                        Navigator.push(
+                        Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
                             builder: (context) => RegisterPage(),
@@ -452,7 +454,7 @@ class _LoginPageState extends State<LoginPage> {
                       borderRadius: BorderRadius.circular(12),
                       // highlightColor: Colors.amber,
                       highlightColor: Color(0x1000B1D2),
-                      splashColor: Color(0x4000B1D2),
+                      splashColor: Color.fromARGB(255, 238, 184, 248),
                       child: Container(
                         padding: EdgeInsets.symmetric(horizontal: 3),
                         child: Text(
@@ -460,7 +462,7 @@ class _LoginPageState extends State<LoginPage> {
                           'Syarat Ketentuan & Kebijakan Privasi',
                           style: GoogleFonts.poppins(
                             fontSize: 13,
-                            color: Color(0xff00b1d2),
+                            color: Colors.deepPurple,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
