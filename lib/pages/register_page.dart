@@ -44,6 +44,7 @@ class _RegisterPageState extends State<RegisterPage> {
           "username": _usernameController.text.trim(),
           "email": _emailController.text.trim(),
           "password": _passwordController.text.trim(),
+          "level": "2",
         },
       );
       var data = json.decode(response.body);
