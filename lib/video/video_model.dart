@@ -4,6 +4,7 @@ class VideoModel {
   String durasi;
   String link_video;
   String nama_sub_kategori_video;
+  String thumbnail;
 
   VideoModel({
     required this.urutan,
@@ -11,6 +12,7 @@ class VideoModel {
     required this.durasi,
     required this.link_video,
     required this.nama_sub_kategori_video,
+    required this.thumbnail,
   });
 
   factory VideoModel.fromJson(Map<String, dynamic> json) {
@@ -20,6 +22,7 @@ class VideoModel {
       durasi: json['durasi'] as String,
       link_video: json['link_video'] as String,
       nama_sub_kategori_video: json['nama_sub_kategori_video'] as String,
+      thumbnail: json['thumbnail'] as String,
     );
   }
 }

@@ -123,7 +123,7 @@ class _AudioPlayState extends State<AudioPlay> {
                 widget.audioModel.gambar,
                 width: double.infinity,
                 height: 350,
-                fit: BoxFit.cover,
+                fit: BoxFit.fill,
               ),
             ),
             SizedBox(height: 32),

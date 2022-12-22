@@ -301,45 +301,45 @@ class _LoginPageState extends State<LoginPage> {
               SizedBox(height: 20),
 
               // Lupa kata sandi
-              Container(
-                height: 20,
-                padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                width: double.infinity,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    OutlinedButton(
-                      child: Text(
-                        "Lupa kata sandi?",
-                        style: GoogleFonts.poppins(
-                          fontSize: 14,
-                          color: Colors.deepPurple,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      onPressed: () {
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(
-                        //     builder: (context) {
-                        //       return ForgotPassword();
-                        //     },
-                        //   ),
-                        // );
-                      },
-                      style: TextButton.styleFrom(
-                        disabledBackgroundColor: Colors.amber,
-                        backgroundColor: Colors.grey[200],
-                        foregroundColor: Colors.purple,
-                        side: BorderSide(width: 0, color: Colors.transparent),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(40),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              // Container(
+              //   height: 20,
+              //   padding: const EdgeInsets.symmetric(horizontal: 25.0),
+              //   width: double.infinity,
+              //   child: Row(
+              //     mainAxisAlignment: MainAxisAlignment.end,
+              //     children: [
+              //       OutlinedButton(
+              //         child: Text(
+              //           "Lupa kata sandi?",
+              //           style: GoogleFonts.poppins(
+              //             fontSize: 14,
+              //             color: Colors.deepPurple,
+              //             fontWeight: FontWeight.bold,
+              //           ),
+              //         ),
+              //         onPressed: () {
+              //           // Navigator.push(
+              //           //   context,
+              //           //   MaterialPageRoute(
+              //           //     builder: (context) {
+              //           //       return ForgotPassword();
+              //           //     },
+              //           //   ),
+              //           // );
+              //         },
+              //         style: TextButton.styleFrom(
+              //           disabledBackgroundColor: Colors.amber,
+              //           backgroundColor: Colors.grey[200],
+              //           foregroundColor: Colors.purple,
+              //           side: BorderSide(width: 0, color: Colors.transparent),
+              //           shape: RoundedRectangleBorder(
+              //             borderRadius: BorderRadius.circular(40),
+              //           ),
+              //         ),
+              //       ),
+              //     ],
+              //   ),
+              // ),
 
               SizedBox(height: 20),
 

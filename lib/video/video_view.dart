@@ -67,8 +67,8 @@ class _VideoViewState extends State<VideoView> {
                           color: Colors.deepPurple),
                     ),
                     subtitle: Text(video.durasi),
-                    leading: Image.asset(
-                      "assets/images/play_button.png",
+                    leading: Image.network(
+                      video.thumbnail,
                       width: 50,
                       height: 200,
                       fit: BoxFit.contain,
