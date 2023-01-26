@@ -3,7 +3,8 @@ import 'package:http/http.dart' as http;
 import 'package:skooleneducation/audio/audio_model.dart';
 
 class AudioService {
-  static const VIEW_URL = "http://localhost:8888/localconnect/get_audio.php";
+  static const VIEW_URL =
+      "http://courseapp.wstif3c.id/restapi_skoolen/get_audio.php";
 
   List<AudioModel> bookFromJson(String jsonString) {
     final data = json.decode(jsonString);

@@ -33,7 +33,7 @@ class _LoginPageState extends State<LoginPage> {
 
   Future signIn() async {
     try {
-      var url = "http://localhost:8888/localconnect/login.php";
+      var url = "http://courseapp.wstif3c.id/restapi_skoolen/login.php";
       var response = await http.post(
         Uri.parse(url),
         body: {

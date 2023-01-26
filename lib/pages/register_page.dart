@@ -37,7 +37,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
   Future signUp() async {
     try {
-      var url = "http://localhost:8888/localconnect/register.php";
+      var url = "http://courseapp.wstif3c.id/restapi_skoolen/register.php";
       var response = await http.post(
         Uri.parse(url),
         body: {

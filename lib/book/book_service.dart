@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 class BookService {
   // static const ADD_URL = "http://localhost:8888/localconnect/add.php";
   static const VIEW_URL =
-      "http://localhost:8888/localconnect/book/get_book.php";
+      "http://courseapp.wstif3c.id/restapi_skoolen/book/get_book.php";
   // static const UPDATE_URL = "http://localhost:8888/localconnect/update.php";
   // Future<String> addBook(BookModel bookModel) async {
   //   final response =

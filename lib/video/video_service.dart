@@ -3,7 +3,8 @@ import 'package:http/http.dart' as http;
 import 'package:skooleneducation/video/video_model.dart';
 
 class VideoService {
-  static const VIEW_URL = "http://localhost:8888/localconnect/get_video.php";
+  static const VIEW_URL =
+      "http://courseapp.wstif3c.id/restapi_skoolen/get_video.php";
 
   List<VideoModel> bookFromJson(String jsonString) {
     final data = json.decode(jsonString);
